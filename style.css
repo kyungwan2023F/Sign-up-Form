@@ -4,19 +4,24 @@
          url('fonts/notosans-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+
 html, body {
     display: flex;
-    height: 100%;
     width: 100%;
+    height: 100%;
     margin: 0;
-    background: white;
+    padding: 0;
 }
+
+body {
+    min-height: 100%;
+}
+
 
 .picture_container {
     background: black;
-    width: 500px;
+    width: 70rem;
     height: 100%;
 }
 
@@ -34,4 +39,56 @@ html, body {
     font-family: 'noto_sansbold';
     font-size: 1.3rem;
     font-weight: bold;
+}
+
+.background_pic_container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.background_pic_container img {
+    height: 100%;
+    width: 100%;
+} 
+
+.overlay_logo_text {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.credit_container {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+p.credit {
+    color: white;
+}
+
+.logo_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 35%;
+}
+
+
+.logo_text img {
+    width: 7rem;
+    height: 85%;
+}
+
+.logo_text p {
+    font-size: 3rem;
+    color: white;
 }
