@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="picture_container">
-        <div class="background_pic_container">
-            <img src="background_pic/halie-west-bTzpau9mKT4-unsplash.jpg">
-            <div class="overlay_logo_text">
-                <div class="logo_text">
-                    <img src="logo/odin-logo.png">
-                    <p>ODIN</p>
-                </div>
+        <div class="overlay_logo_text">
+            <div class="logo_text">
+                <img src="logo/odin-logo.png">
+                <p>ODIN</p>
             </div>
-            <div class="credit_container">
-                <p class="credit">Photo by <u>Halie West</u> on <u>Unsplash</u></p>
-            </div>
+        </div>
+        <div class="credit_container">
+            <p class="credit">Photo by <u>Halie West</u> on <u>Unsplash</u></p>
         </div>
     </div>
-    <div class="right_container"> 
+    <div class="right_container">
         <div class="message">
             <p>This is not a real online service! You know you need something<br>
-            like this in your life to help you realize your deepest dreams. <br> Sign up now to get started. <p>You <em>know</em> you want to.</p></p>
+                like this in your life to help you realize your deepest dreams. <br> Sign up now to get started.
+            <p>You <em>know</em> you want to.</p>
+            </p>
         </div>
-        <div class ="form_container">
+        <div class="form_container">
             <p>Let's Do This!</p>
             <form action="#" method="post">
                 <div class="container">
@@ -36,7 +37,7 @@
                         <label for="email">EMAIL</label>
                         <input type="email" id="email" name="email">
                         <label for="user_password">PASSWORD</label>
-                        <input type="password" id="user_password" name="password">
+                        <input type="password" id="user_password" name="password" required>
                     </div>
                     <div class="right_column">
                         <label for="last_name">LAST NAME</label>
@@ -44,16 +45,35 @@
                         <label for="phone_num">PHONE NUMBER</label>
                         <input type="text" id="phone_num" name="phone_num">
                         <label for="password_confirmation">CONFIRM PASSWORD</label>
-                        <input type="password" id="password_confirmation" name="password_confirmation">
+                        <input type="password" id="password_confirmation" name="password_confirmation" required>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="button_container">
+        <script>
+            const password = document.getElementById("user_password");
+            const confirmPassword = document.getElementById("password_confirmation");
 
+            function validatePasswords() {
+                if (password.value !== confirmPassword.value) {
+                    password.classList.add('input-error');
+                    confirmPassword.classList.add('input-error');
+                } else {
+                    password.classList.remove('input-error');
+                    confirmPassword.classList.remove('input-error');
+                }
+            }
+
+            password.addEventListener('input', validatePasswords);
+            confirmPassword.addEventListener('input', validatePasswords);
+        </script>
+        <div class="button_container">
+            <button class="submit-btn">Create Account</button>
+            <p>Already have an account? <a href="https://www.google.com">Log in</a></p>
         </div>
 
     </div>
-    
+
 </body>
+
 </html>
