@@ -55,9 +55,20 @@
             const confirmPassword = document.getElementById("password_confirmation");
 
             function validatePasswords() {
+                const existingError = document.querySelector('.error-message');
+
+                // Remove existing error message if present
+                if (existingError) {
+                    existingError.remove();
+                }
                 if (password.value !== confirmPassword.value) {
                     password.classList.add('input-error');
                     confirmPassword.classList.add('input-error');
+
+                    const errorMessage = document.createElement("p");
+                    errorMessage.className = "error-message";
+                    errorMessage.textContent = "* Passwords do not match";
+                    confirmPassword.insertAdjacentElement('afterend', errorMessage);
                 } else {
                     password.classList.remove('input-error');
                     confirmPassword.classList.remove('input-error');
